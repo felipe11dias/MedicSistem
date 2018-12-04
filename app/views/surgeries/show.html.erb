@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date hours:</strong>
+  <%= @surgery.date_hours %>
+</p>
+
+<p>
+  <strong>Feedback:</strong>
+  <%= @surgery.feedback %>
+</p>
+
+<p>
+  <strong>Doctors:</strong>
+  <%= @surgery.doctors %>
+</p>
+
+<p>
+  <strong>Rooms:</strong>
+  <%= @surgery.rooms %>
+</p>
+
+<p>
+  <strong>Clients:</strong>
+  <%= @surgery.clients %>
+</p>
+
+<%= link_to 'Edit', edit_surgery_path(@surgery) %> |
+<%= link_to 'Back', surgeries_path %>

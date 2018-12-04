@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date_hours: 2018-11-21 14:00:32
+  feedback: MyText
+  doctors: one
+  rooms: one
+  clients: one
+
+two:
+  date_hours: 2018-11-21 14:00:32
+  feedback: MyText
+  doctors: two
+  rooms: two
+  clients: two

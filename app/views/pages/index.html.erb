@@ -1,0 +1,12 @@
+<h1>Welcome <%=current_manager.full_name %></h1>
+
+<div>
+<h2>Function of manager</h2>
+<ul>
+    <li> <%= link_to 'Doctor(s)', doctors_index_path %> </li>
+    <li> <%= link_to 'Room(s)', rooms_path %> </li>
+    <li> <%= link_to 'Client(s)', clients_path %> </li>
+</ul>
+
+<%= link_to 'Logout', destroy_manager_session_path, method: :delete %>
+</div>
