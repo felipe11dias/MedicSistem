@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th>Date hours</th>
-      <th>Feedback</th>
       <th>Doctors</th>
       <th>Rooms</th>
       <th>Clients</th>
@@ -18,10 +17,9 @@
     <% @surgeries.each do |surgery| %>
       <tr>
         <td><%= surgery.date_hours %></td>
-        <td><%= surgery.feedback %></td>
-        <td><%= surgery.doctors %></td>
-        <td><%= surgery.rooms %></td>
-        <td><%= surgery.clients %></td>
+        <td><%= surgery.doctor.full_name %></td>
+        <td><%= surgery.room.floor %></td>
+        <td><%= surgery.client.full_name %></td>
         <td><%= link_to 'Show', surgery %></td>
         <td><%= link_to 'Edit', edit_surgery_path(surgery) %></td>
         <td><%= link_to 'Destroy', surgery, method: :delete, data: { confirm: 'Are you sure?' } %></td>

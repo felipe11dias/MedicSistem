@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
-  root "application#root"
-  
+  # root "application#root"
+
   resources :surgeries
   resources :clients
   resources :rooms
@@ -10,8 +10,7 @@ Rails.application.routes.draw do
   get 'doctors/show'
   get 'pages/index'
   get 'pages/home'
-  get 'pages/allocation'
-  get 'pages/show_sur'
+  get 'pages/show_surgeries'
 
 
 
@@ -22,15 +21,14 @@ Rails.application.routes.draw do
   devise_for :managers, path: 'managers', controllers: { sessions: "managers/sessions", registrations: "managers/registrations"}
   # eg. http://localhost:3000/managers/sign_in
 
-  # devise_scope :manager do
-  #   authenticated :manager do
-  #     root 'pages#index', as: :authenticated_root
-  #   end
-  
-  #   unauthenticated do
-  #     root 'managers/sessions#new', as: :unauthenticated_root
-  #   end
-  # end
+  devise_scope :manager do
+    authenticated :manager do
+      root 'pages#index', as: :authenticated_root
+    end
+    unauthenticated do
+      root 'managers/sessions#new', as: :unauthenticated_root
+    end
+  end
  
   # devise_scope :doctor do
   #   authenticated :doctor do

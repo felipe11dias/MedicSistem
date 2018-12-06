@@ -8,8 +8,7 @@ class PagesController < ApplicationController
     end
 
     #doctor function
-    def allocation
+    def show_surgeries
+        @surgeries = Surgery.all
     end
-
-
 end

@@ -1,6 +1,6 @@
 class SurgeriesController < ApplicationController
-  before_action :set_doctor, only: [:show, :edit, :update, :destroy]
-
+  
+  before_action :set_surgery, only: [:show, :edit, :update, :destroy]
   # GET /surgeries
   # GET /surgeries.json
   def index
@@ -15,6 +15,9 @@ class SurgeriesController < ApplicationController
   # GET /surgeries/new
   def new
     @surgery = Surgery.new
+    @doctors = Doctor.all
+    @rooms = Room.all
+    @clients = Client.all
   end
 
   # GET /surgeries/1/edit
@@ -62,6 +65,9 @@ class SurgeriesController < ApplicationController
   end
 
   private
+    def set_surgery
+      @surgery = Surgery.find(params[:id])
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_doctor
       @doctor = Doctor.find(params[:id])
@@ -69,6 +75,6 @@ class SurgeriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def surgery_params
-      params.require(:surgery).permit(:date_hours, :feedback, :doctors_id, :rooms_id, :clients_id)
+      params.require(:surgery).permit(:date_hours, :feedback, :doctor_id, :room_id, :client_id)
     end
 end

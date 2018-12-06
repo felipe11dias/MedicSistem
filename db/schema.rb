@@ -64,14 +64,14 @@ ActiveRecord::Schema.define(version: 2018_11_21_190032) do
   create_table "surgeries", force: :cascade do |t|
     t.datetime "date_hours"
     t.text "feedback"
-    t.integer "doctors_id"
-    t.integer "rooms_id"
-    t.integer "clients_id"
+    t.integer "doctor_id"
+    t.integer "room_id"
+    t.integer "client_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["clients_id"], name: "index_surgeries_on_clients_id"
-    t.index ["doctors_id"], name: "index_surgeries_on_doctors_id"
-    t.index ["rooms_id"], name: "index_surgeries_on_rooms_id"
+    t.index ["client_id"], name: "index_surgeries_on_client_id"
+    t.index ["doctor_id"], name: "index_surgeries_on_doctor_id"
+    t.index ["room_id"], name: "index_surgeries_on_room_id"
   end
 
 end

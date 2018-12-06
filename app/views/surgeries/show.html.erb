@@ -12,17 +12,17 @@
 
 <p>
   <strong>Doctors:</strong>
-  <%= @surgery.doctors %>
+  <%= @surgery.doctor.full_name %>
 </p>
 
 <p>
   <strong>Rooms:</strong>
-  <%= @surgery.rooms %>
+  <%= @surgery.room.floor %>
 </p>
 
 <p>
   <strong>Clients:</strong>
-  <%= @surgery.clients %>
+  <%= @surgery.client.full_name %>
 </p>
 
 <%= link_to 'Edit', edit_surgery_path(@surgery) %> |

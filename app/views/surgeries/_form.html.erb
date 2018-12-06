@@ -22,18 +22,18 @@
   </div>
 
   <div class="field">
-    <%= form.label :doctors_id %>
-    <%= form.text_field :doctors_id %>
+    <%= form.label :doctor_id %>
+     <%= form.select :doctor_id, @doctors.collect { |doctor| [ doctor.full_name, doctor.id ] } %>
   </div>
 
   <div class="field">
-    <%= form.label :rooms_id %>
-    <%= form.text_field :rooms_id %>
+    <%= form.label :room_id %>
+     <%= form.select :room_id, @rooms.collect { |room| [ room.floor, room.id ] } %>
   </div>
 
   <div class="field">
-    <%= form.label :clients_id %>
-    <%= form.text_field :clients_id %>
+    <%= form.label :client_id %>
+     <%= form.select :client_id, @clients.collect { |client| [ client.full_name, client.id ] } %>
   </div>
 
   <div class="actions">
