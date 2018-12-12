@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Surgeries</h1>
+<h1 class="ui green header">Surgeries</h1>
 
-<table>
+<table class="ui celled table">
   <thead>
     <tr>
       <th>Date hours</th>
@@ -21,7 +21,7 @@
         <td><%= surgery.room.floor %></td>
         <td><%= surgery.client.full_name %></td>
         <td><%= link_to 'Show', surgery %></td>
-        <td><%= link_to 'Edit', edit_surgery_path(surgery) %></td>
+        <td><%= link_to 'Edit', edit_surgery_path(surgery.id) %></td>
         <td><%= link_to 'Destroy', surgery, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -29,6 +29,5 @@
 </table>
 
 <br>
-
-<%= link_to 'New Surgery', new_surgery_path %></br>
-<%= link_to 'Back', pages_home_path %>
+<a class="ui green label" rel="nofollow" data-method="get" href="/pages/home">Back</a>
+<a class="ui green label" rel="nofollow" data-method="get" href="/surgeries/new">New Surgery</a>

@@ -1,5 +1,5 @@
 class DoctorsController < ApplicationController
-    before_action :authenticate_manager!, only: [:show, :edit, :update, :destroy]
+    before_action :authenticate_manager!, only: [:show, :index]
     
     def index
         @doctors = Doctor.all

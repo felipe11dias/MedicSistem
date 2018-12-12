@@ -1,4 +1,5 @@
 class RoomsController < ApplicationController
+  before_action :authenticate_manager!, only: [:create, :show, :edit, :update, :destroy]
   before_action :set_room, only: [:show, :edit, :update, :destroy]
   # GET /rooms
   # GET /rooms.json

@@ -10,33 +10,53 @@
       </ul>
     </div>
   <% end %>
+<div class="ui form">  
+ <div class="fields">
+  <div class="six wide field ">  
+   
+     <div style="width:650px">
+     
+        <div class="field">
+            
+              <%= form.label :date_hours, class:"ui green label" %>
+            <div class="fields">  
+             
+              <%= form.datetime_select :date_hours  %>
+             
+            </div>
+           </div>
+    </div>
+  
+  </div>   
+  
 
   <div class="field">
-    <%= form.label :date_hours %>
-    <%= form.datetime_select :date_hours %>
-  </div>
-
-  <div class="field">
-    <%= form.label :feedback %>
-    <%= form.text_area :feedback %>
-  </div>
-
-  <div class="field">
-    <%= form.label :doctor_id %>
+    <%= form.label :doctor_id, class:"ui green label"%>
      <%= form.select :doctor_id, @doctors.collect { |doctor| [ doctor.full_name, doctor.id ] } %>
   </div>
 
   <div class="field">
-    <%= form.label :room_id %>
+    <%= form.label :room_id , class:"ui green label"%>
      <%= form.select :room_id, @rooms.collect { |room| [ room.floor, room.id ] } %>
   </div>
 
   <div class="field">
-    <%= form.label :client_id %>
+    <%= form.label :client_id , class:"ui green label"%>
      <%= form.select :client_id, @clients.collect { |client| [ client.full_name, client.id ] } %>
   </div>
+   <br><br>
+ </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+ <div class="field" style="width:1028px">
+    <%= form.label :feedback , class:"ui green label"%>
+    <%= form.text_area :feedback %>
+ </div>
+ <br><br>
+</div>
+
+
+<div class="actions">
+  <a class="ui green label" tabindex="0" higrel="nofollow" data-method="get" href="/surgeries">Back</a> 
+  <button class=" ui green submit button" style="font-weight:bold" type="submit">Confim</button>
+</div>
 <% end %>

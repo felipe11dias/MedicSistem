@@ -1,12 +1,20 @@
 <h1>Welcome <%=current_manager.full_name %></h1>
 
 <div>
-<h2>Function of manager</h2>
-<ul>
-    <li> <%= link_to 'Doctor(s)', doctors_index_path %> </li>
-    <li> <%= link_to 'Room(s)', rooms_path %> </li>
-    <li> <%= link_to 'Client(s)', clients_path %> </li>
-</ul>
+<h3 class="ui dividing header"></h3>
+<h2 class="ui blue header">Function of manager</h2>
 
-<%= link_to 'Logout', destroy_manager_session_path, method: :delete %>
+
+<div class="ui huge middle aligned animated list">
+    
+        <div class="item"> <%= link_to 'Doctor(s)', doctors_index_path %> </div>
+        <div class="item"> <%= link_to 'Room(s)', rooms_path %> </div>
+        <div class="item"> <%= link_to 'Client(s)', clients_path %> </div>
+    
+</div>
+
+<br><br><br>
+<a class="ui blue label" rel="nofollow" data-method="delete" href="/managers/sign_out">Logout</a>
+
+
 </div>

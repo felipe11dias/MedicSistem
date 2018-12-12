@@ -1,11 +1,12 @@
 module Accessible
     extend ActiveSupport::Concern
     included do
-      before_action :check_doctor
+      before_action :check_user
     end
   
     protected
-    def check_doctor
+
+    def check_user
       if current_manager
         flash.clear
         # if you have rails_admin. You can redirect anywhere really

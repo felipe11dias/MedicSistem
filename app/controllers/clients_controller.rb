@@ -1,5 +1,5 @@
 class ClientsController < ApplicationController
-  before_action :authenticate_manager!, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_manager!, only: [:create, :show, :edit, :update, :destroy]
 
   # GET /clients
   # GET /clients.json

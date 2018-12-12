@@ -2,7 +2,7 @@
 
 <h1>Doctors</h1>
 
-<table>
+<table class="ui celled table">
   <thead>
     <tr>
       <th>Full Name</th>
@@ -16,13 +16,13 @@
   <tbody>
     <% @doctors.each do |doctor| %>
       <tr>
-        <td><%= doctor.full_name %></td>
-        <td><%= doctor.birthday %></td>
-        <td><%= doctor.crm %></td>
-        <td><%= doctor.salary %></td>
+        <td data-label="Name"><%= doctor.full_name %></td>
+        <td data-label="Birthday"><%= doctor.birthday %></td>
+        <td data-label="CRM"><%= doctor.crm %></td>
+        <td data-label="Salary"><%= doctor.salary %></td>
         <td><%= link_to 'Show', doctors_show_path(id: doctor.id) %></td>
         <td><%= link_to 'Edit', manager_edit_doctor_path(doctor.id) %></td>
-        <td><%= link_to 'Destroy', doctor_registration_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', manager_destroy_doctor_path(doctor.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,5 +30,12 @@
 
 <br>
 
-<%= link_to 'New Doctor', new_doctor_registration_path %></br>
+<%= link_to 'New Doctor', manager_new_doctor_path %></br>
 <%= link_to 'Back', authenticated_root_path %>
+
+<script>
+var alert =  "<%= alert %>"
+if (alert != '' && alert != undefined) {
+  alert(alert);
+}
+</script>

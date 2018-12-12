@@ -12,9 +12,13 @@ Rails.application.routes.draw do
   get 'pages/home'
   get 'pages/show_surgeries'
 
-
-
   get '/edit-doctor/:id', to: "managers/doctors#edit", as: "manager_edit_doctor"
+  put '/edit-doctor/:id', to: "managers/doctors#update", as: "manager_update_doctor"
+
+  get '/new-doctor', to: "managers/doctors#new", as: "manager_new_doctor"
+  post '/new-doctor', to: "managers/doctors#create", as: "manager_create_doctor"
+
+  delete '/destroy-doctor/:id', to: "managers/doctors#destroy", as: "manager_destroy_doctor"
 
   devise_for :doctors, path: 'doctors', controllers: { sessions: "doctors/sessions", registrations: "doctors/registrations"}
   # eg. http://localhost:3000/doctors/sign_in

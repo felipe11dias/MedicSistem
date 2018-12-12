@@ -1,12 +1,15 @@
 <h1>Welcome <%=current_doctor.full_name %></h1>
 
 <div>
-<h2>Function of doctor</h2>
+<h3 class="ui dividing header"></h3>
 
-<ul>
-    <li> <%= link_to 'Surgeries', surgeries_path %> </li>
-    <li> <%= link_to 'View perfomed surgeries', pages_show_surgeries_path%> </li>
-</ul>
+<h2 class="ui green header">Function of doctor</h2>
 
-<%= link_to 'Logout', destroy_doctor_session_path, method: :delete %>
+<div class="ui huge middle aligned animated list">
+    <div class="item"><%= link_to 'Surgeries', surgeries_path %> </div>
+    <div class="item"><%= link_to 'View perfomed surgeries', pages_show_surgeries_path%> </div>
+</div>
+<br><br><br>
+<a class="ui green label" rel="nofollow" data-method="delete" href="/doctors/sign_out">Logout</a>
+
 </div>

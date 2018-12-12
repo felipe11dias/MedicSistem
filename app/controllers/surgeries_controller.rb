@@ -1,5 +1,5 @@
 class SurgeriesController < ApplicationController
-  
+  before_action :authenticate_doctor!, only: [:create, :index, :show, :edit, :update, :destroy]
   before_action :set_surgery, only: [:show, :edit, :update, :destroy]
   # GET /surgeries
   # GET /surgeries.json
@@ -22,6 +22,9 @@ class SurgeriesController < ApplicationController
 
   # GET /surgeries/1/edit
   def edit
+    @doctors = Doctor.all
+    @rooms = Room.all
+    @clients = Client.all
   end
 
   # POST /surgeries
